@@ -86,7 +86,13 @@ public class pract11 {
 	@Test
 	public void tc3() throws InterruptedException
 	{
-		rm.findElement(By.xpath("//*[contains(@id,'autocomplete')]")).sendKeys("Ab");
+		WebElement text=rm.findElement(By.xpath("//*[contains(@id,'autocomplete')]"));
+		
+		Boolean b1=text.isDisplayed();
+		
+		System.out.println("Is Textbox visible ? :" +b1);
+		
+		text.sendKeys("Ab");
 		
 		Thread.sleep(4000);
 		
