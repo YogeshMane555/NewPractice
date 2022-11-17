@@ -51,6 +51,14 @@ public class pract11 {
 		}
 	}
 	
+	
+	@Test
+	public void tc2()
+	{
+		
+	}
+	
+	
 	@AfterMethod
 	public void tearDown()
 	{
