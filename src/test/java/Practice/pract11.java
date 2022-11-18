@@ -217,6 +217,8 @@ public class pract11 {
 			e.printStackTrace();
 		}
 		
+		rm.switchTo().
+		
 	}
 	
 	@Test
