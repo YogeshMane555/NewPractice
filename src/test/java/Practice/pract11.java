@@ -6,6 +6,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
@@ -218,7 +219,31 @@ public class pract11 {
 		
 	}
 	
+	@Test
+	public void alertBox() throws InterruptedException
+	{
+		rm.findElement(By.xpath("//*[contains(@id,'name')]")).sendKeys("beyondwalls Digital");
+		
+		rm.findElement(By.xpath("//*[contains(@id,'alertbtn')]")).click();
+		
+		Thread.sleep(4000);
+		
+		Alert a=rm.switchTo().alert();
+		
+		a.accept();
+		
+		Thread.sleep(4000);
+		
+		rm.findElement(By.xpath("//*[contains(@id,'name')]")).sendKeys("SELL.do");
+		
+		rm.findElement(By.xpath("//*[contains(@id,'confirmbtn')]")).click();
+		
+		Thread.sleep(4000);
+		
+		Alert a1=rm.switchTo().alert();
 	
+		a1.dismiss();
+	}
 	
 	
 	@AfterMethod
