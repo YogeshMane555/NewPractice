@@ -217,7 +217,7 @@ public class pract11 {
 			e.printStackTrace();
 		}
 		
-		rm.switchTo().
+		
 		
 	}
 	
@@ -245,6 +245,42 @@ public class pract11 {
 		Alert a1=rm.switchTo().alert();
 	
 		a1.dismiss();
+	}
+	
+	@Test
+	public void ElementVisible() throws InterruptedException
+	{
+
+		JavascriptExecutor js=(JavascriptExecutor)rm;
+		
+		js.executeScript("window.scrollBy(0,400)");
+		
+		WebElement Textbox=rm.findElement(By.xpath("//*[contains(@id,'displayed-text')]"));
+	
+		boolean b1=Textbox.isDisplayed();
+		
+		System.out.println("Is Textbox element visible?" +b1);
+		
+		Thread.sleep(4000);
+		
+		rm.findElement(By.xpath("//*[contains(@value,'Hide')]")).click();
+		
+		Thread.sleep(4000);
+		
+        boolean b2=Textbox.isDisplayed();
+		
+		System.out.println("Is Textbox element visible After clicking on Hide button?" +b2);
+		
+		TakesScreenshot tk=(TakesScreenshot)rm;
+		
+		File src=tk.getScreenshotAs(OutputType.FILE);
+		
+		try {
+			FileUtils.copyFile(src, new File("C://Users//Admin//eclipse-workspace//NewPractice//Screenshot//ElementScreenshot.png"));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	
