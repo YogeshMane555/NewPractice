@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Practice.pract11">
+      <class name="Practice.AutoSuggestion">
         <methods>
-          <include name="tearDown"/>
-          <include name="Checkbox"/>
           <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="tc1"/>
         </methods>
-      </class> <!-- Practice.pract11 -->
+      </class> <!-- Practice.AutoSuggestion -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="8" total="9" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-11-21T12:06:02 IST" name="Default suite" finished-at="2022-11-21T12:06:16 IST" duration-ms="14094">
+  <suite started-at="2022-11-21T15:08:33 IST" name="Default suite" finished-at="2022-11-21T15:08:45 IST" duration-ms="11730">
     <groups>
     </groups>
-    <test started-at="2022-11-21T12:06:02 IST" name="Default test" finished-at="2022-11-21T12:06:16 IST" duration-ms="14094">
-      <class name="Practice.pract11">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:Practice.pract11@5158b42f]" started-at="2022-11-21T12:06:02 IST" name="setUp" finished-at="2022-11-21T12:06:08 IST" duration-ms="5459" status="PASS">
+    <test started-at="2022-11-21T15:08:33 IST" name="Default test" finished-at="2022-11-21T15:08:45 IST" duration-ms="11730">
+      <class name="Practice.AutoSuggestion">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Practice.AutoSuggestion@515aebb0]" started-at="2022-11-21T15:08:33 IST" name="setUp" finished-at="2022-11-21T15:08:36 IST" duration-ms="3130" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="ElementVisible()[pri:0, instance:Practice.pract11@5158b42f]" started-at="2022-11-21T12:06:08 IST" name="ElementVisible" finished-at="2022-11-21T12:06:16 IST" duration-ms="8476" status="PASS">
+        <test-method signature="tc1()[pri:0, instance:Practice.AutoSuggestion@515aebb0]" started-at="2022-11-21T15:08:36 IST" name="tc1" finished-at="2022-11-21T15:08:45 IST" duration-ms="8370" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ElementVisible -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:Practice.pract11@5158b42f]" started-at="2022-11-21T12:06:16 IST" name="tearDown" finished-at="2022-11-21T12:06:16 IST" duration-ms="121" status="PASS">
+        </test-method> <!-- tc1 -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:Practice.AutoSuggestion@515aebb0]" started-at="2022-11-21T15:08:45 IST" name="tearDown" finished-at="2022-11-21T15:08:45 IST" duration-ms="192" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- Practice.pract11 -->
+      </class> <!-- Practice.AutoSuggestion -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

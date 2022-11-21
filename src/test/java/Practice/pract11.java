@@ -216,9 +216,7 @@ public class pract11 {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		
-		
+			
 	}
 	
 	@Test
@@ -277,6 +275,25 @@ public class pract11 {
 		
 		try {
 			FileUtils.copyFile(src, new File("C://Users//Admin//eclipse-workspace//NewPractice//Screenshot//ElementScreenshot.png"));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		Thread.sleep(5000);
+		
+		rm.findElement(By.xpath("//*[contains(@id,'show-textbox')]")).click();
+		
+		Boolean b3=Textbox.isDisplayed();
+		
+		System.out.println("Is textbox field dispalyed? :"+b3);
+		
+		TakesScreenshot tk1=(TakesScreenshot)rm;
+		
+		File src1=tk1.getScreenshotAs(OutputType.FILE);
+		
+		try {
+			FileUtils.copyFile(src1, new File("C:\\Users\\Admin\\eclipse-workspace\\NewPractice\\Screenshot//AfterClickingOnShowbuttonScreenshot.png"));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
