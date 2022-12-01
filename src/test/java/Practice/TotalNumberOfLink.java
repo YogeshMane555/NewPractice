@@ -52,6 +52,24 @@ public class TotalNumberOfLink {
 
 	}
 	
+	@Test
+	public void tc2() throws InterruptedException
+	{
+		Thread.sleep(4000);
+		
+		List<WebElement> imglist= rm.findElements(By.tagName("img"));
+		
+		int img=imglist.size();
+		
+		System.out.println("Total Number of Images are :"+img);
+		
+		for(WebElement limglist:imglist)
+		{
+			System.out.println("Images name are :"+limglist.getText());
+		}
+		
+	}
+	
 	
 	@AfterMethod
 	public void tearDown()
