@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="1" total="2" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-12-01T23:36:19 IST" name="Default suite" finished-at="2022-12-01T23:36:34 IST" duration-ms="14682">
+  <suite started-at="2022-12-01T23:44:36 IST" name="Default suite" finished-at="2022-12-01T23:44:49 IST" duration-ms="13570">
     <groups>
     </groups>
-    <test started-at="2022-12-01T23:36:19 IST" name="Default test" finished-at="2022-12-01T23:36:34 IST" duration-ms="14682">
+    <test started-at="2022-12-01T23:44:36 IST" name="Default test" finished-at="2022-12-01T23:44:49 IST" duration-ms="13570">
       <class name="Practice.TotalNumberOfLink">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:Practice.TotalNumberOfLink@1b11171f]" started-at="2022-12-01T23:36:19 IST" name="setUp" finished-at="2022-12-01T23:36:25 IST" duration-ms="5647" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Practice.TotalNumberOfLink@1b11171f]" started-at="2022-12-01T23:44:36 IST" name="setUp" finished-at="2022-12-01T23:44:44 IST" duration-ms="8743" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="tc1()[pri:0, instance:Practice.TotalNumberOfLink@1b11171f]" started-at="2022-12-01T23:36:25 IST" name="tc1" finished-at="2022-12-01T23:36:33 IST" duration-ms="8669" status="PASS">
+        <test-method signature="tc2()[pri:0, instance:Practice.TotalNumberOfLink@1b11171f]" started-at="2022-12-01T23:44:44 IST" name="tc2" finished-at="2022-12-01T23:44:48 IST" duration-ms="4106" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- tc1 -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:Practice.TotalNumberOfLink@1b11171f]" started-at="2022-12-01T23:36:33 IST" name="tearDown" finished-at="2022-12-01T23:36:34 IST" duration-ms="313" status="PASS">
+        </test-method> <!-- tc2 -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:Practice.TotalNumberOfLink@1b11171f]" started-at="2022-12-01T23:44:48 IST" name="tearDown" finished-at="2022-12-01T23:44:49 IST" duration-ms="617" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
