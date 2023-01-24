@@ -2,6 +2,7 @@ package Practice;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.Alert;
@@ -134,8 +135,62 @@ public class P_24_1 {
 		
 		a.accept();
 		
+		aa.sendKeys("YOGESHMANE");
 		
+		Thread.sleep(2000);
+		
+		rm.findElement(By.xpath("//*[contains(@id,'confirmbtn')]")).click();
+		
+		Thread.sleep(2000);
+		
+		Alert a1=rm.switchTo().alert();
+		
+		a1.dismiss();
 	}
+	
+	@Test
+	public void tc5() throws InterruptedException
+	{
+		rm.findElement(By.xpath("//*[contains(@id,'autocomplete')]")).sendKeys("New");
+		
+		Thread.sleep(3000);
+		
+		List<WebElement> lis=rm.findElements(By.xpath("//*[contains(@class,'ui-menu-item')]"));
+		
+		int sizeofList=lis.size();
+		
+		System.out.println("Total Number of Autosuggestion list are :"+sizeofList);
+		
+		for(WebElement Text:lis)
+		{
+		
+			String AllText=Text.getText();
+			
+			System.out.println("Autosuggestion are :"+AllText);
+			
+			if(AllText.equalsIgnoreCase("New Zealand"))
+			{
+				Text.click();
+			}
+
+		}
+		
+		Thread.sleep(2000);
+		
+		TakesScreenshot tk=(TakesScreenshot)rm;
+		
+		File src5=tk.getScreenshotAs(OutputType.FILE);
+		
+		try {
+			FileUtils.copyFile(src5, new File("C://Users//Yogesh//git//NewPractice//Screenshot//AutoSuggestion24_1.png"));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	
+	
 	
 	@AfterMethod
 	public void tearDown()
