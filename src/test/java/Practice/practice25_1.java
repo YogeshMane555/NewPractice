@@ -1,5 +1,7 @@
 package Practice;
 
+import java.awt.Dimension;
+import java.awt.Point;
 import java.io.File;
 import java.io.IOException;
 import java.util.Iterator;
@@ -42,7 +44,7 @@ public class practice25_1 {
 		
 	}
 	
-	@Test
+	@Test(priority=0)
 	public void tc1()
 	{
 	
@@ -61,7 +63,7 @@ public class practice25_1 {
 		
 	}
 	
-	@Test
+	@Test(priority=1)
 	public void tc2() throws InterruptedException
 	{
 		JavascriptExecutor j=(JavascriptExecutor)rm;
@@ -96,7 +98,7 @@ public class practice25_1 {
 		}
 	}
 	
-	@Test
+	@Test(priority=-1)
 	public void tc3() throws InterruptedException
 	{
 		String Title=rm.getTitle();
@@ -132,6 +134,47 @@ public class practice25_1 {
 			e.printStackTrace();
 		} 
 	}
+	
+	@Test(priority=0)
+	public void tc4() throws InterruptedException
+	{
+		WebElement alrtbttn= rm.findElement(By.xpath("//*[contains(@id,'alertbtn')]"));
+		
+		org.openqa.selenium.Dimension d=alrtbttn.getSize();
+		
+		int height =d.height;
+	
+		System.out.println("Height of WebElement is :"+height);
+		
+		Thread.sleep(3000);
+		
+		int width=d.width;
+		
+		System.out.println("Width of WebElement is :"+width);
+		
+		String color=alrtbttn.getCssValue("background-color");
+		
+		System.out.println("Color of WebElement is :"+color);
+		
+		String fontSize=alrtbttn.getCssValue("font-size");
+		
+		System.out.println("Font Size is :"+fontSize);
+		
+		String padding=alrtbttn.getCssValue("padding");
+		
+		System.out.println("Padding of Text is :"+padding);
+		
+		org.openqa.selenium.Point p=alrtbttn.getLocation();
+		
+		int locationTop=p.x;
+		
+		System.out.println("Location from Top side :"+locationTop);
+		
+		int locationBottom=p.y;
+	
+		System.out.println("Location from Bottom side :"+locationBottom);
+	}
+	
 	
 	
 	@AfterMethod

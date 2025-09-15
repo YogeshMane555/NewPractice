@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test thread-count="5" name="Test">
+    <classes>
+      <class name="Practice.TotalNumberOfLink"/>
+      <class name="Practice.pract11"/>
+      <class name="Practice.AutoSuggestion"/>
+      <class name="Practice.newPract2511"/>
+      <class name="Practice.practice25_1"/>
+      <class name="Practice.P_24_1"/>
+      <class name="Practice.Wait3_1"/>
+      <class name="Practice.datePicker"/>
+      <class name="Practice.pract2211"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
