@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
-
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
@@ -80,7 +79,7 @@ public class Day23_9 {
 		File src2=tk2.getScreenshotAs(OutputType.FILE);
 		
 		try {
-			FileUtils.copyFile(src2, new File("C://Users//Yogesh//git//NewPractice//Screenshot//23_9RadioButton.png"));
+			FileUtils.copyFile(src2, new File("C://Users//Yogesh//git//NewPractice//Screenshot//23_9RADIOBUTTON.png"));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
