@@ -22,7 +22,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class Day25_9 {
+public class Day26_9 {
 
 	WebDriver km;
 	
@@ -45,58 +45,58 @@ public class Day25_9 {
 		
 	}
 	
-	@Test
+	@Test (priority = 8)
 	public void tc1()
 	{
-		List<WebElement> tag= km.findElements(By.tagName("a"));
+		List<WebElement> tags=km.findElements(By.tagName("a"));
 		
-		int noTag=tag.size();
+		int noAuto=tags.size();
 		
-		System.out.println("Total Tags are :"+noTag);
+		System.out.println("Total tags :"+noAuto);
 		
-		for(WebElement tagt:tag)
+		for(WebElement tagst:tags)
 		{
-			String tagText=tagt.getText();
+			String tagText=tagst.getText();
 			
 			System.out.println("Tags are :"+tagText);
 		}
 		
 		String title=km.getTitle();
 		
-		System.out.println("Current Title :"+title);
+		System.out.println("Title :"+title);
 		
 		String url=km.getCurrentUrl();
 		
-		System.out.println("Current URL :"+url);
+		System.out.println("URL :"+url);
 	}
 	
-	@Test
+	@Test(priority = 0)
 	public void tc2()
 	{
-		WebElement r1=km.findElement(By.xpath("//input[contains(@value,'radio1')]"));
+		WebElement r2=km.findElement(By.xpath("//input[contains(@value,'radio2')]"));
 		
-		r1.click();
+		r2.click();
 		
-		boolean b2=r1.isSelected();
+		boolean b2=r2.isSelected();
 		
-		System.out.println("Radio button 1 Selected :"+b2);
+		System.out.println("Radio 2 Selected ?"+b2);
 		
 		TakesScreenshot tk2=(TakesScreenshot)km;
 		
 		File src2=tk2.getScreenshotAs(OutputType.FILE);
 		
 		try {
-			FileUtils.copyFile(src2, new File("C://Users//Yogesh//git//NewPractice//Screenshot//25_9RADIO.png"));
+			FileUtils.copyFile(src2, new File("C://Users//Yogesh//git//NewPractice//Screenshot//26_9RADIO.png"));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
 	
-	@Test
+	@Test (priority = 1)
 	public void tc3() throws InterruptedException
 	{
-		km.findElement(By.xpath("//input[contains(@id,'autocomplete')]")).sendKeys("Us");
+		km.findElement(By.xpath("//input[contains(@id,'autocomplete')]")).sendKeys("Ue");
 		
 		Thread.sleep(2000);
 		
@@ -112,7 +112,7 @@ public class Day25_9 {
 			
 			System.out.println("Autosuggestion :"+autoText);
 			
-			if(autoText.contentEquals("United States (USA)"))
+			if(autoText.contentEquals("Venezuela"))
 			{
 				autot.click();
 				
@@ -123,61 +123,60 @@ public class Day25_9 {
 				File src3=tk3.getScreenshotAs(OutputType.FILE);
 				
 				try {
-					FileUtils.copyFile(src3, new File("C://Users//Yogesh//git//NewPractice//Screenshot//25_9AUTOSUGGESTION.png"));
+					FileUtils.copyFile(src3, new File("C://Users//Yogesh//git//NewPractice//Screenshot//26_9AUTOSUGGESTION.png"));
 				} catch (IOException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 			}
-				
 		}
 	}
 	
-	@Test
+	@Test(priority = 2)
 	public void tc4()
 	{
 		WebElement drpdwn=km.findElement(By.xpath("//select[contains(@id,'dropdown-class-example')]"));
 		
 		Select s=new Select(drpdwn);
 		
-		s.selectByVisibleText("Option1");
+		s.selectByVisibleText("Option2");
 		
 		TakesScreenshot tk4=(TakesScreenshot)km;
 		
 		File src4=tk4.getScreenshotAs(OutputType.FILE);
 		
 		try {
-			FileUtils.copyFile(src4, new File("C://Users//Yogesh//git//NewPractice//Screenshot//25_9DROPDOWN.png"));
+			FileUtils.copyFile(src4, new File("C://Users//Yogesh//git//NewPractice//Screenshot//26_9DROPDOWN.png"));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
 	
-	@Test
+	@Test(priority = 3)
 	public void tc5()
 	{
-		WebElement c1=km.findElement(By.xpath("//input[contains(@id,'checkBoxOption1')]"));
+		WebElement c2=km.findElement(By.xpath("//input[contains(@value,'option2')]"));
 		
-		c1.click();
+		c2.click();
 		
-		boolean b5=c1.isSelected();
+		boolean b2=c2.isSelected();
 		
-		System.out.println("Checkbox 1 selected :"+b5);
+		System.out.println("Checkbox 2 Selected :?"+b2);
 		
 		TakesScreenshot tk5=(TakesScreenshot)km;
 		
 		File src5=tk5.getScreenshotAs(OutputType.FILE);
 		
 		try {
-			FileUtils.copyFile(src5, new File("C://Users//Yogesh//git//NewPractice//Screenshot//25_9CHEKBOX.png"));
+			FileUtils.copyFile(src5, new File("C://Users//Yogesh//git//NewPractice//Screenshot//26_9CHECKBOX.png"));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
 	
-	@Test
+	@Test (priority = 5)
 	public void tc6() throws InterruptedException
 	{
 		km.findElement(By.xpath("//a[contains(@id,'opentab')]")).click();
@@ -192,9 +191,9 @@ public class Day25_9 {
 		
 		km.switchTo().window(child);
 		
-		JavascriptExecutor js6=(JavascriptExecutor)km;
+		JavascriptExecutor js=(JavascriptExecutor)km;
 		
-		js6.executeScript("window.scrollBy(0,2000)");
+		js.executeScript("window.scrollBy(0,5000)");
 		
 		Thread.sleep(2000);
 		
@@ -203,25 +202,23 @@ public class Day25_9 {
 		File src6=tk6.getScreenshotAs(OutputType.FILE);
 		
 		try {
-			FileUtils.copyFile(src6, new File("C://Users//Yogesh//git//NewPractice//Screenshot//25_9OPENTAB.png"));
+			FileUtils.copyFile(src6, new File("C://Users//Yogesh//git//NewPractice//Screenshot//26_9NEWTAB.png"));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
 	
-	@Test
+	@Test (priority = 4)
 	public void tc7() throws InterruptedException
 	{
 		WebElement text=km.findElement(By.xpath("//input[contains(@id,'name')]"));
 		
-		text.sendKeys("DURGA");
+		text.sendKeys("SHREE-RAM");
 		
 		Thread.sleep(2000);
 		
 		km.findElement(By.xpath("//input[contains(@id,'alertbtn')]")).click();
-		
-		Thread.sleep(2000);
 		
 		Alert a=km.switchTo().alert();
 		
@@ -231,85 +228,104 @@ public class Day25_9 {
 		
 		Thread.sleep(2000);
 		
-		text.sendKeys("KALI");
-		
-		km.findElement(By.xpath("//input[contains(@id,'confirmbtn')]")).click();
+		text.sendKeys("HANUMAN");
 		
 		Thread.sleep(2000);
+		
+		km.findElement(By.xpath("//input[contains(@id,'confirmbtn')]")).click();
 		
 		Alert aa=km.switchTo().alert();
 		
 		Thread.sleep(2000);
 		
 		aa.dismiss();
+		
+		Thread.sleep(2000);
 	}
 	
-	@Test
-	public void tc8() throws InterruptedException, IOException
+	@Test (priority = 5)
+	public void tc8() throws InterruptedException
 	{
-        JavascriptExecutor js6=(JavascriptExecutor)km;
+		JavascriptExecutor js8=(JavascriptExecutor)km;
 		
-		js6.executeScript("window.scrollBy(0,500)");
+		js8.executeScript("window.scrollBy(0,500)");
 		
 		Thread.sleep(2000);
 		
-		WebElement textDiplay=km.findElement(By.xpath("//input[contains(@id,'displayed-text')]"));
+		WebElement text=km.findElement(By.xpath("//input[contains(@id,'displayed-text')]"));
 		
-		textDiplay.sendKeys("DURGAKALI");
+		text.sendKeys("BHANJRANI");
 		
 		Thread.sleep(2000);
 		
 		km.findElement(By.xpath("//input[contains(@id,'hide-textbox')]")).click();
 		
-		boolean b=textDiplay.isDisplayed();
+		Thread.sleep(2000);
 		
-		System.out.println("Text Displayed after clicking on HIDE :"+b);
+		boolean b8=text.isDisplayed();
+		
+		System.out.println("HIDE BUTTON :"+b8);
 		
 		TakesScreenshot tk8=(TakesScreenshot)km;
 		
 		File src8=tk8.getScreenshotAs(OutputType.FILE);
 		
-		FileUtils.copyFile(src8, new File("C://Users//Yogesh//git//NewPractice//Screenshot//25_9HIDE.png"));
+		try {
+			FileUtils.copyFile(src8, new File("C://Users//Yogesh//git//NewPractice//Screenshot//26_9HIDE.png"));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		Thread.sleep(2000);
 		
 		km.findElement(By.xpath("//input[contains(@id,'show-textbox')]")).click();
 		
-		boolean b2=textDiplay.isDisplayed();
+		Thread.sleep(2000);
 		
-		System.out.println("Test Displayed after clicking in SHOW :"+b2);
+		boolean b9=text.isDisplayed();
 		
-        TakesScreenshot tk9=(TakesScreenshot)km;
+		System.out.println("SHOW BUTTON :"+b9);
+		
+		TakesScreenshot tk9=(TakesScreenshot)km;
 		
 		File src9=tk9.getScreenshotAs(OutputType.FILE);
 		
-		FileUtils.copyFile(src9, new File("C://Users//Yogesh//git//NewPractice//Screenshot//25_9SHOW.png"));
-	
+		try {
+			FileUtils.copyFile(src9, new File("C://Users//Yogesh//git//NewPractice//Screenshot//26_9SHOW.png"));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
-	@Test
+	@Test (priority = 6)
 	public void tc9() throws InterruptedException
 	{
-        JavascriptExecutor js9=(JavascriptExecutor)km;
+        JavascriptExecutor js8=(JavascriptExecutor)km;
 		
-		js9.executeScript("window.scrollBy(0,1100)");
+		js8.executeScript("window.scrollBy(0,1100)");
 		
 		Thread.sleep(2000);
 		
 		WebElement mouseHover=km.findElement(By.xpath("//button[contains(@id,'mousehover')]"));
 		
-		WebElement reload=km.findElement(By.xpath("//a[contains(text(),'Reload')]"));
+		WebElement top=km.findElement(By.xpath("//a[contains(text(),'Top')]"));
 		
 		Actions a=new Actions(km);
 		
 		a.moveToElement(mouseHover).build().perform();
 		
-		a.click(reload).build().perform();
+		a.click(top).build().perform();
 		
-        TakesScreenshot tk9=(TakesScreenshot)km;
+		Thread.sleep(2000);
 		
-		File src9=tk9.getScreenshotAs(OutputType.FILE);
+        TakesScreenshot tk10=(TakesScreenshot)km;
+		
+		File src10=tk10.getScreenshotAs(OutputType.FILE);
 		
 		try {
-			FileUtils.copyFile(src9, new File("C://Users//Yogesh//git//NewPractice//Screenshot//25_9ACTIONS.png"));
+			FileUtils.copyFile(src10, new File("C://Users//Yogesh//git//NewPractice//Screenshot//26_9ACTIONS.png"));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -317,12 +333,12 @@ public class Day25_9 {
 		
 	}
 	
-	@Test
+	@Test (priority = 7)
 	public void tc10() throws InterruptedException
 	{
-        JavascriptExecutor js9=(JavascriptExecutor)km;
+        JavascriptExecutor js8=(JavascriptExecutor)km;
 		
-		js9.executeScript("window.scrollBy(0,1400)");
+		js8.executeScript("window.scrollBy(0,1400)");
 		
 		Thread.sleep(2000);
 		
@@ -330,22 +346,25 @@ public class Day25_9 {
 		
 		km.switchTo().frame(frame);
 		
-        JavascriptExecutor js10=(JavascriptExecutor)km;
+		Thread.sleep(2000);
 		
-		js10.executeScript("window.scrollBy(0,1400)");
+        JavascriptExecutor js9=(JavascriptExecutor)km;
+		
+		js9.executeScript("window.scrollBy(0,3500)");
 		
 		Thread.sleep(2000);
 		
-        TakesScreenshot tk9=(TakesScreenshot)km;
+		 TakesScreenshot tk11=(TakesScreenshot)km;
+			
+			File src11=tk11.getScreenshotAs(OutputType.FILE);
+			
+			try {
+				FileUtils.copyFile(src11, new File("C://Users//Yogesh//git//NewPractice//Screenshot//26_9FRAME.png"));
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		
-		File src9=tk9.getScreenshotAs(OutputType.FILE);
-		
-		try {
-			FileUtils.copyFile(src9, new File("C://Users//Yogesh//git//NewPractice//Screenshot//25_9FRAME.png"));
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 	}
 	
 	@AfterMethod
@@ -353,5 +372,4 @@ public class Day25_9 {
 	{
 		km.quit();
 	}
-	
 }
