@@ -2,10 +2,10 @@ package Practice;
 
 import java.io.File;
 import java.io.IOException;
-import java.time.Duration;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
+
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -16,19 +16,15 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class class16_2 {
+public class Day17_2 {
 
 	public WebDriver km;
-	
-	public WebDriverWait wait;
 	
 	@BeforeMethod
 	public void setUp()
@@ -45,12 +41,10 @@ public class class16_2 {
 		
 		km=new ChromeDriver(co);
 		
-		wait=new WebDriverWait(km, Duration.ofSeconds(30));
-		
 		km.get("https://rahulshettyacademy.com/AutomationPractice/");
 	}
-	
-	public String screenshot(String fileName)
+
+	public String screenShot(String fileName)
 	{
 		TakesScreenshot tk=(TakesScreenshot)km;
 		
@@ -70,156 +64,152 @@ public class class16_2 {
 	{
 		List<WebElement> tg=km.findElements(By.tagName("a"));
 		
-		int noOfTag=tg.size();
+		int noTag=tg.size();
 		
-		System.out.println("Total Number of tags are:"+noOfTag);
+		System.out.println("Total Number of Tags :"+noTag);
 		
 		for(WebElement tgT:tg)
 		{
-			String tagText=tgT.getText();
+			String tagTxt=tgT.getText();
 			
-			System.out.println("Tags are :"+tagText);
+			System.out.println("Tags are :"+tagTxt);
 		}
 	}
 	
 	@Test
 	public void tc2()
 	{
-		WebElement r2=km.findElement(By.xpath("//input[contains(@value,'radio2')]"));
+		WebElement r3=km.findElement(By.xpath("//input[contains(@value,'radio3')]"));
 		
-		r2.click();
+		r3.click();
 		
-		boolean b=r2.isSelected();
-		
-		Assert.assertTrue(b);
-		
-		screenshot("16_2Radio");
-	}
-	
-	@Test
-	public void tc3()
-	{
-		String expected="option2";
-		
-		WebElement drpdwn=km.findElement(By.xpath("//select[contains(@id,'dropdown-class-example')]"));
-		
-		Select s=new Select(drpdwn);
-		
-		s.selectByVisibleText("Option2");
-		
-		String actual=drpdwn.getAttribute("value");
-		
-		System.out.println("Actual value is :"+actual);
-		
-		Assert.assertEquals(actual, expected);
-		
-		screenshot("16_2Dropdown");
-	}
-	
-	@Test
-	public void tc4()
-	{
-		WebElement c2=km.findElement(By.xpath("//input[contains(@value,'option2')]"));
-		
-		c2.click();
-		
-		boolean b=c2.isSelected();
+		boolean b=r3.isSelected();
 		
 		Assert.assertTrue(b);
 		
-		screenshot("16_2Checkbox");
-		
+		screenShot("17_2RadioButton");
 	}
 	
 	@Test
-	public void tc5() throws InterruptedException
+	public void tc3() throws InterruptedException
 	{
-		String expected="Indonesia";
+		String expected="Trinidad and Tobago";
 		
-		WebElement autosugTxt=km.findElement(By.xpath("//input[contains(@id,'autocomplete')]"));
+		WebElement autoTxt=km.findElement(By.xpath("//input[contains(@id,'autocomplete')]"));
 		
-		autosugTxt.sendKeys("Ind");
+		autoTxt.sendKeys("Ad");
 		
 		Thread.sleep(2000);
 		
-		List<WebElement> auto=km.findElements(By.xpath("//li[contains(@class,'ui-menu-item')]"));
+		List<WebElement> autosug =km.findElements(By.xpath("//li[contains(@class,'ui-menu-item')]"));
 		
-		int noAuto=auto.size();
+		int noAutosug=autosug.size();
 		
-		System.out.println("Total Number of Autosuggestions are :"+noAuto);
+		System.out.println("Number of Autosuggestion :"+noAutosug);
 		
-		for(WebElement autoT:auto)
+		for(WebElement autoSugTxt:autosug)
 		{
-			String autoTxt=autoT.getText();
+			String autoSugTextt=autoSugTxt.getText();
 			
-			System.out.println("Autosuggestion are :"+autoTxt);
+			System.out.println("Autosuggestions are :"+autoSugTextt);
 			
-			if(autoTxt.contentEquals("Indonesia"))
+			if(autoSugTextt.contentEquals("Trinidad and Tobago"))
 			{
-				autoT.click();
+				autoSugTxt.click();
 				
-				String acutal=autosugTxt.getAttribute("value");
+				String actual=autoTxt.getAttribute("value");
 				
-				System.out.println("Autosuggestion selected is :"+acutal);
+				System.out.println("Autosuggestion Selected :"+actual);
 				
-				Assert.assertEquals(acutal, expected);
+				Assert.assertEquals(actual, expected);
 				
-				screenshot("16_2Autosuggestion");
+				screenShot("17_2Autosuggestion");
 			}
 		}
 	}
 	
 	@Test
-	public void tc6()
+	public void tc4()
 	{
-		String expected="https://www.qaclickacademy.com/";
+		String expected ="option3";
+		
+		WebElement drpdwn=km.findElement(By.xpath("//select[contains(@id,'dropdown-class-example')]"));
+		
+		Select s=new Select(drpdwn);
+		
+		s.selectByVisibleText("Option3");
+		
+		String actual=drpdwn.getAttribute("value");
+		
+		System.out.println("Selected from Dropdown :"+actual);
+		
+		Assert.assertEquals(actual, expected);
+		
+		screenShot("17_2DropDown");
+	}
+	
+	@Test
+	public void tc5()
+	{
+		WebElement c3=km.findElement(By.xpath("//input[contains(@id,'checkBoxOption3')]"));
+		
+		c3.click();
+		
+		boolean b=c3.isSelected();
+		
+		Assert.assertTrue(b);
+		
+		screenShot("17_2Checkbox");
+	}
+	
+	@Test
+	public void tc6() throws InterruptedException
+	{
+		String expected="QAClick Academy - A Testing Academy to Learn, Earn and Shine";
 		
 		km.findElement(By.xpath("//a[contains(@id,'opentab')]")).click();
 		
-		Set<String>s= km.getWindowHandles();
+		Set<String> s=km.getWindowHandles();
 		
 		Iterator<String>ss= s.iterator();
 		
-		String parent=ss.next();
+		String parent =ss.next();
 		
 		String child=ss.next();
 		
 		km.switchTo().window(child);
 		
-		String newTabUrl=km.getCurrentUrl();
+		String childTitle=km.getTitle();
 		
-		System.out.println("New Tab URL is :"+newTabUrl);
+		System.out.println("New Tab Title is :"+childTitle);
 		
-		Assert.assertEquals(newTabUrl, expected);
+		Assert.assertEquals(childTitle, expected);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.tagName("a")));
+		Thread.sleep(2000);
 		
-		screenshot("16_2NewTab");
-				
+		screenShot("17_2NewTab");
 	}
 	
 	@Test
 	public void tc7() throws InterruptedException
 	{
-		WebElement altTxt=km.findElement(By.xpath("//input[contains(@id,'name')]"));
+		WebElement alTxt=km.findElement(By.xpath("//input[contains(@id,'name')]"));
 		
-		altTxt.sendKeys("Kajal Jagtap");
-		
-		Thread.sleep(2000);
+		alTxt.sendKeys("Kaju Majhi Babdi");
 		
 		km.findElement(By.xpath("//input[contains(@id,'alertbtn')]")).click();
-
+		
 		Thread.sleep(2000);
 		
 		km.switchTo().alert().accept();
 		
-		altTxt.sendKeys("Kajal Mane");
+		alTxt.sendKeys("Majha Gondus");
 		
 		km.findElement(By.xpath("//input[contains(@id,'confirmbtn')]")).click();
-	
+		
 		Thread.sleep(2000);
 		
-		km.switchTo().alert().dismiss();
+		km.switchTo().alert().dismiss();	
 		
 	}
 	
@@ -236,7 +226,7 @@ public class class16_2 {
 		
 		Assert.assertFalse(b);
 		
-		screenshot("16_2Hide");
+		screenShot("17_2Hide");
 		
 		km.findElement(By.xpath("//input[contains(@id,'show-textbox')]")).click();
 		
@@ -244,7 +234,7 @@ public class class16_2 {
 		
 		Assert.assertTrue(b2);
 		
-		screenshot("16_2Show");
+		screenShot("17_2Show");
 	}
 	
 	@Test
@@ -252,7 +242,7 @@ public class class16_2 {
 	{
 		JavascriptExecutor js=(JavascriptExecutor)km;
 		
-		js.executeScript("window.scrollBy(0,1100)");
+		js.executeScript("window.scrollBy(0,1300)");
 		
 		Thread.sleep(2000);
 		
@@ -260,12 +250,11 @@ public class class16_2 {
 		
 		WebElement top=km.findElement(By.xpath("//a[contains(text(),'Top')]"));
 		
-		Actions a =new Actions(km);
+		Actions a=new Actions(km);
 		
-		a.moveToElement(mouseHover).moveToElement(top).click().build().perform();
+		a.moveToElement(mouseHover).moveToElement(top).click(top).build().perform();
 		
-		screenshot("16_2Actions");
-		
+		screenShot("17_2Actions");
 	}
 	
 	@Test
@@ -273,21 +262,19 @@ public class class16_2 {
 	{
 		JavascriptExecutor js=(JavascriptExecutor)km;
 		
-		js.executeScript("window.scrollBy(0,1500)");
-		
-		Thread.sleep(2000);
+		js.executeScript("window.scrollBy(0,1450)");
 		
 		WebElement frame=km.findElement(By.xpath("//iframe[contains(@id,'courses-iframe')]"));
 		
 		km.switchTo().frame(frame);
 		
-		Thread.sleep(2000);
-		
         JavascriptExecutor js2=(JavascriptExecutor)km;
 		
-		js2.executeScript("window.scrollBy(0,1500)");
+		js2.executeScript("window.scrollBy(0,1450)");
 		
-		screenshot("16_2IFrame");
+		Thread.sleep(2000);
+		
+		screenShot("17_2Frame");
 	}
 	
 	@AfterMethod
@@ -295,5 +282,4 @@ public class class16_2 {
 	{
 		km.quit();
 	}
-	
 }
