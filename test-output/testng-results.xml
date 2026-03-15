@@ -2,132 +2,132 @@
 <testng-results ignored="0" total="10" passed="10" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-03-12T20:08:41 IST" name="Default suite" finished-at="2026-03-12T20:09:52 IST" duration-ms="71190">
+  <suite started-at="2026-03-15T21:31:24 IST" name="Default suite" finished-at="2026-03-15T21:32:30 IST" duration-ms="66020">
     <groups>
     </groups>
-    <test started-at="2026-03-12T20:08:41 IST" name="Default test" finished-at="2026-03-12T20:09:52 IST" duration-ms="71190">
-      <class name="Practice.Day12_3">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:Practice.Day12_3@5e0e82ae]" started-at="2026-03-12T20:08:41 IST" name="setUp" finished-at="2026-03-12T20:08:45 IST" duration-ms="4251" status="PASS">
+    <test started-at="2026-03-15T21:31:24 IST" name="Default test" finished-at="2026-03-15T21:32:30 IST" duration-ms="66020">
+      <class name="Practice.Day15_3">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Practice.Day15_3@5e0e82ae]" started-at="2026-03-15T21:31:24 IST" name="setUp" finished-at="2026-03-15T21:31:28 IST" duration-ms="3759" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="tc1()[pri:0, instance:Practice.Day12_3@5e0e82ae]" started-at="2026-03-12T20:08:45 IST" name="tc1" finished-at="2026-03-12T20:08:47 IST" duration-ms="1299" status="PASS">
+        <test-method signature="tc1()[pri:0, instance:Practice.Day15_3@5e0e82ae]" started-at="2026-03-15T21:31:28 IST" name="tc1" finished-at="2026-03-15T21:31:29 IST" duration-ms="1214" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tc1 -->
-        <test-method is-config="true" signature="teadDown()[pri:0, instance:Practice.Day12_3@5e0e82ae]" started-at="2026-03-12T20:08:47 IST" name="teadDown" finished-at="2026-03-12T20:08:48 IST" duration-ms="1286" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:Practice.Day15_3@5e0e82ae]" started-at="2026-03-15T21:31:29 IST" name="tearDown" finished-at="2026-03-15T21:31:30 IST" duration-ms="977" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- teadDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:Practice.Day12_3@5e0e82ae]" started-at="2026-03-12T20:08:48 IST" name="setUp" finished-at="2026-03-12T20:08:49 IST" duration-ms="1335" status="PASS">
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Practice.Day15_3@5e0e82ae]" started-at="2026-03-15T21:31:30 IST" name="setUp" finished-at="2026-03-15T21:31:33 IST" duration-ms="3315" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="tc10()[pri:0, instance:Practice.Day12_3@5e0e82ae]" started-at="2026-03-12T20:08:49 IST" name="tc10" finished-at="2026-03-12T20:08:56 IST" duration-ms="6815" status="PASS">
+        <test-method signature="tc10()[pri:0, instance:Practice.Day15_3@5e0e82ae]" started-at="2026-03-15T21:31:33 IST" name="tc10" finished-at="2026-03-15T21:31:37 IST" duration-ms="4177" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tc10 -->
-        <test-method is-config="true" signature="teadDown()[pri:0, instance:Practice.Day12_3@5e0e82ae]" started-at="2026-03-12T20:08:56 IST" name="teadDown" finished-at="2026-03-12T20:08:57 IST" duration-ms="486" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:Practice.Day15_3@5e0e82ae]" started-at="2026-03-15T21:31:37 IST" name="tearDown" finished-at="2026-03-15T21:31:38 IST" duration-ms="886" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- teadDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:Practice.Day12_3@5e0e82ae]" started-at="2026-03-12T20:08:57 IST" name="setUp" finished-at="2026-03-12T20:09:01 IST" duration-ms="4639" status="PASS">
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Practice.Day15_3@5e0e82ae]" started-at="2026-03-15T21:31:38 IST" name="setUp" finished-at="2026-03-15T21:31:40 IST" duration-ms="1318" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="tc2()[pri:0, instance:Practice.Day12_3@5e0e82ae]" started-at="2026-03-12T20:09:01 IST" name="tc2" finished-at="2026-03-12T20:09:02 IST" duration-ms="848" status="PASS">
+        <test-method signature="tc2()[pri:0, instance:Practice.Day15_3@5e0e82ae]" started-at="2026-03-15T21:31:40 IST" name="tc2" finished-at="2026-03-15T21:31:42 IST" duration-ms="2687" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tc2 -->
-        <test-method is-config="true" signature="teadDown()[pri:0, instance:Practice.Day12_3@5e0e82ae]" started-at="2026-03-12T20:09:02 IST" name="teadDown" finished-at="2026-03-12T20:09:03 IST" duration-ms="470" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:Practice.Day15_3@5e0e82ae]" started-at="2026-03-15T21:31:42 IST" name="tearDown" finished-at="2026-03-15T21:31:43 IST" duration-ms="872" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- teadDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:Practice.Day12_3@5e0e82ae]" started-at="2026-03-12T20:09:03 IST" name="setUp" finished-at="2026-03-12T20:09:04 IST" duration-ms="1400" status="PASS">
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Practice.Day15_3@5e0e82ae]" started-at="2026-03-15T21:31:43 IST" name="setUp" finished-at="2026-03-15T21:31:44 IST" duration-ms="1372" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="tc3()[pri:0, instance:Practice.Day12_3@5e0e82ae]" started-at="2026-03-12T20:09:04 IST" name="tc3" finished-at="2026-03-12T20:09:09 IST" duration-ms="5231" status="PASS">
+        <test-method signature="tc3()[pri:0, instance:Practice.Day15_3@5e0e82ae]" started-at="2026-03-15T21:31:44 IST" name="tc3" finished-at="2026-03-15T21:31:50 IST" duration-ms="5849" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tc3 -->
-        <test-method is-config="true" signature="teadDown()[pri:0, instance:Practice.Day12_3@5e0e82ae]" started-at="2026-03-12T20:09:09 IST" name="teadDown" finished-at="2026-03-12T20:09:11 IST" duration-ms="1909" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:Practice.Day15_3@5e0e82ae]" started-at="2026-03-15T21:31:50 IST" name="tearDown" finished-at="2026-03-15T21:31:51 IST" duration-ms="325" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- teadDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:Practice.Day12_3@5e0e82ae]" started-at="2026-03-12T20:09:11 IST" name="setUp" finished-at="2026-03-12T20:09:15 IST" duration-ms="3390" status="PASS">
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Practice.Day15_3@5e0e82ae]" started-at="2026-03-15T21:31:51 IST" name="setUp" finished-at="2026-03-15T21:31:54 IST" duration-ms="3572" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="tc4()[pri:0, instance:Practice.Day12_3@5e0e82ae]" started-at="2026-03-12T20:09:15 IST" name="tc4" finished-at="2026-03-12T20:09:15 IST" duration-ms="679" status="PASS">
+        <test-method signature="tc4()[pri:0, instance:Practice.Day15_3@5e0e82ae]" started-at="2026-03-15T21:31:54 IST" name="tc4" finished-at="2026-03-15T21:31:55 IST" duration-ms="868" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tc4 -->
-        <test-method is-config="true" signature="teadDown()[pri:0, instance:Practice.Day12_3@5e0e82ae]" started-at="2026-03-12T20:09:15 IST" name="teadDown" finished-at="2026-03-12T20:09:16 IST" duration-ms="643" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:Practice.Day15_3@5e0e82ae]" started-at="2026-03-15T21:31:55 IST" name="tearDown" finished-at="2026-03-15T21:31:55 IST" duration-ms="341" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- teadDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:Practice.Day12_3@5e0e82ae]" started-at="2026-03-12T20:09:16 IST" name="setUp" finished-at="2026-03-12T20:09:17 IST" duration-ms="1466" status="PASS">
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Practice.Day15_3@5e0e82ae]" started-at="2026-03-15T21:31:55 IST" name="setUp" finished-at="2026-03-15T21:31:59 IST" duration-ms="3294" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="tc5()[pri:0, instance:Practice.Day12_3@5e0e82ae]" started-at="2026-03-12T20:09:17 IST" name="tc5" finished-at="2026-03-12T20:09:20 IST" duration-ms="2552" status="PASS">
+        <test-method signature="tc5()[pri:0, instance:Practice.Day15_3@5e0e82ae]" started-at="2026-03-15T21:31:59 IST" name="tc5" finished-at="2026-03-15T21:31:59 IST" duration-ms="573" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tc5 -->
-        <test-method is-config="true" signature="teadDown()[pri:0, instance:Practice.Day12_3@5e0e82ae]" started-at="2026-03-12T20:09:20 IST" name="teadDown" finished-at="2026-03-12T20:09:20 IST" duration-ms="480" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:Practice.Day15_3@5e0e82ae]" started-at="2026-03-15T21:31:59 IST" name="tearDown" finished-at="2026-03-15T21:32:00 IST" duration-ms="442" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- teadDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:Practice.Day12_3@5e0e82ae]" started-at="2026-03-12T20:09:20 IST" name="setUp" finished-at="2026-03-12T20:09:24 IST" duration-ms="3265" status="PASS">
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Practice.Day15_3@5e0e82ae]" started-at="2026-03-15T21:32:00 IST" name="setUp" finished-at="2026-03-15T21:32:03 IST" duration-ms="3126" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="tc6()[pri:0, instance:Practice.Day12_3@5e0e82ae]" started-at="2026-03-12T20:09:24 IST" name="tc6" finished-at="2026-03-12T20:09:26 IST" duration-ms="2306" status="PASS">
+        <test-method signature="tc6()[pri:0, instance:Practice.Day15_3@5e0e82ae]" started-at="2026-03-15T21:32:03 IST" name="tc6" finished-at="2026-03-15T21:32:07 IST" duration-ms="3699" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tc6 -->
-        <test-method is-config="true" signature="teadDown()[pri:0, instance:Practice.Day12_3@5e0e82ae]" started-at="2026-03-12T20:09:26 IST" name="teadDown" finished-at="2026-03-12T20:09:27 IST" duration-ms="1307" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:Practice.Day15_3@5e0e82ae]" started-at="2026-03-15T21:32:07 IST" name="tearDown" finished-at="2026-03-15T21:32:07 IST" duration-ms="424" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- teadDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:Practice.Day12_3@5e0e82ae]" started-at="2026-03-12T20:09:27 IST" name="setUp" finished-at="2026-03-12T20:09:29 IST" duration-ms="1325" status="PASS">
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Practice.Day15_3@5e0e82ae]" started-at="2026-03-15T21:32:07 IST" name="setUp" finished-at="2026-03-15T21:32:10 IST" duration-ms="3279" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="tc7()[pri:0, instance:Practice.Day12_3@5e0e82ae]" started-at="2026-03-12T20:09:29 IST" name="tc7" finished-at="2026-03-12T20:09:36 IST" duration-ms="7313" status="PASS">
+        <test-method signature="tc7()[pri:0, instance:Practice.Day15_3@5e0e82ae]" started-at="2026-03-15T21:32:10 IST" name="tc7" finished-at="2026-03-15T21:32:15 IST" duration-ms="4761" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tc7 -->
-        <test-method is-config="true" signature="teadDown()[pri:0, instance:Practice.Day12_3@5e0e82ae]" started-at="2026-03-12T20:09:36 IST" name="teadDown" finished-at="2026-03-12T20:09:36 IST" duration-ms="505" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:Practice.Day15_3@5e0e82ae]" started-at="2026-03-15T21:32:15 IST" name="tearDown" finished-at="2026-03-15T21:32:15 IST" duration-ms="305" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- teadDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:Practice.Day12_3@5e0e82ae]" started-at="2026-03-12T20:09:36 IST" name="setUp" finished-at="2026-03-12T20:09:40 IST" duration-ms="3524" status="PASS">
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Practice.Day15_3@5e0e82ae]" started-at="2026-03-15T21:32:15 IST" name="setUp" finished-at="2026-03-15T21:32:19 IST" duration-ms="3441" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="tc8()[pri:0, instance:Practice.Day12_3@5e0e82ae]" started-at="2026-03-12T20:09:40 IST" name="tc8" finished-at="2026-03-12T20:09:41 IST" duration-ms="1217" status="PASS">
+        <test-method signature="tc8()[pri:0, instance:Practice.Day15_3@5e0e82ae]" started-at="2026-03-15T21:32:19 IST" name="tc8" finished-at="2026-03-15T21:32:20 IST" duration-ms="1656" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tc8 -->
-        <test-method is-config="true" signature="teadDown()[pri:0, instance:Practice.Day12_3@5e0e82ae]" started-at="2026-03-12T20:09:41 IST" name="teadDown" finished-at="2026-03-12T20:09:44 IST" duration-ms="2429" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:Practice.Day15_3@5e0e82ae]" started-at="2026-03-15T21:32:20 IST" name="tearDown" finished-at="2026-03-15T21:32:21 IST" duration-ms="347" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- teadDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:Practice.Day12_3@5e0e82ae]" started-at="2026-03-12T20:09:44 IST" name="setUp" finished-at="2026-03-12T20:09:49 IST" duration-ms="4912" status="PASS">
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Practice.Day15_3@5e0e82ae]" started-at="2026-03-15T21:32:21 IST" name="setUp" finished-at="2026-03-15T21:32:25 IST" duration-ms="4636" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="tc9()[pri:0, instance:Practice.Day12_3@5e0e82ae]" started-at="2026-03-12T20:09:49 IST" name="tc9" finished-at="2026-03-12T20:09:52 IST" duration-ms="3415" status="PASS">
+        <test-method signature="tc9()[pri:0, instance:Practice.Day15_3@5e0e82ae]" started-at="2026-03-15T21:32:25 IST" name="tc9" finished-at="2026-03-15T21:32:29 IST" duration-ms="3956" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tc9 -->
-        <test-method is-config="true" signature="teadDown()[pri:0, instance:Practice.Day12_3@5e0e82ae]" started-at="2026-03-12T20:09:52 IST" name="teadDown" finished-at="2026-03-12T20:09:52 IST" duration-ms="329" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:Practice.Day15_3@5e0e82ae]" started-at="2026-03-15T21:32:29 IST" name="tearDown" finished-at="2026-03-15T21:32:30 IST" duration-ms="385" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- teadDown -->
-      </class> <!-- Practice.Day12_3 -->
+        </test-method> <!-- tearDown -->
+      </class> <!-- Practice.Day15_3 -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
