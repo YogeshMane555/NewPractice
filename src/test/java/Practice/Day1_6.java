@@ -23,31 +23,33 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class Day27_5 {
+public class Day1_6 {
 
 	WebDriver km;
 	
 	@BeforeClass
 	public void setUp()
 	{
-		System.setProperty("webdriver.chrome.driver", "C://Users//Yogesh//git//NewPractice//NewChromeDriver//chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Yogesh\\git\\NewPractice\\NewChromeDriver\\chromedriver.exe");
 		
 		ChromeOptions co=new ChromeOptions();
 		
 		co.addArguments("start-maximized");
 		
-		co.addArguments("--incgonito");
+		co.addArguments("--incognito");
 		
 		co.addArguments("delete-all-cookies");
 		
 		km=new ChromeDriver(co);
+					
 	}
 	
 	@BeforeMethod
-	public void ini()
+	public void inti()
 	{
 		km.get("https://rahulshettyacademy.com/AutomationPractice/");
 	}
+	
 	
 	public String screenShot(String fileName)
 	{
@@ -64,149 +66,127 @@ public class Day27_5 {
 		return fileName;
 	}
 	
+	
 	@Test
 	public void tc1()
 	{
-		List<WebElement> tg=km.findElements(By.tagName("a"));
+		List<WebElement> link=km.findElements(By.tagName("a"));
 		
-		int noSize=tg.size();
+		int noLink=link.size();
 		
-		System.out.println("Number of Links :"+noSize);
+		System.out.println("Number of Links :"+noLink);
 		
-		for(WebElement tgt:tg)
+		for(WebElement linkT:link)
 		{
-			String Link=tgt.getText();
+			String LinkText=linkT.getText();
 			
-			System.out.println("Links are :"+Link);
+			//System.out.println("Links are :"+LinkText);
+			
+			if(LinkText.contains(" "))
+			{
+				System.out.println("Broken Links :"+LinkText);
+			}
 		}
 	}
 	
 	@Test
 	public void tc2()
 	{
-		WebElement r1=km.findElement(By.xpath("//input[contains(@value,'radio2')]"));
+		WebElement r2=km.findElement(By.xpath("//input[contains(@value,'radio2')]"));
 		
-		r1.click();
+		r2.click();
 		
-		boolean b=r1.isSelected();
+		boolean b=r2.isSelected();
 		
 		Assert.assertTrue(b);
 		
-		screenShot("27_5RADIO");
+		screenShot("RADIO2");
 	}
-	
 	
 	@Test
 	public void tc3() throws InterruptedException
 	{
-		String expected="Lesotho";
+		String expected="Uruguay";
 		
-		WebElement sugTxt=km.findElement(By.xpath("//input[contains(@id,'autocomplete')]"));
+		WebElement autoTxt=km.findElement(By.xpath("//input[contains(@id,'autocomplete')]"));
 		
-		sugTxt.sendKeys("Ho");
+		autoTxt.sendKeys("Ru");
 		
 		Thread.sleep(2000);
 		
-		List<WebElement> auto =km.findElements(By.xpath("//li[contains(@class,'ui-menu-item')]"));
+		List<WebElement> auto=km.findElements(By.xpath("//li[contains(@class,'ui-menu-item')]"));
 		
 		int noAuto=auto.size();
 		
-		System.out.println("Number of Autosuggestions are :"+noAuto);
+		System.out.println("Autosuggestions are :"+noAuto);
 		
 		for(WebElement autoT:auto)
 		{
-			String autoTxt=autoT.getText();
+			String text=autoT.getText();
+		
+			System.out.println("Autosuggestions are :"+text);
 			
-			System.out.println("Autosuggestion are :"+autoTxt);
-			
-			if(autoTxt.contains("Lesotho"))
+			if(text.contentEquals("Uruguay"))
 			{
 				autoT.click();
 				
-				String actual=sugTxt.getAttribute("value");
+				String actual=autoTxt.getAttribute("value");
 				
-				System.out.println("Selected from Autosuggestion :"+actual);
+				System.out.println("Selected from Autosuggestions :"+actual);
 				
 				Assert.assertEquals(actual, expected);
 				
-				screenShot("27_5AUTOSUGGESTION");
+				screenShot("AUTOSUGGESTION");
 			}
-			
 		}
-		
 	}
 	
 	@Test
 	public void tc4()
 	{
 		String expected="option2";
-		
+				
 		WebElement drpdwn=km.findElement(By.xpath("//select[contains(@id,'dropdown-class-example')]"));
 		
 		Select s=new Select(drpdwn);
 		
-		//System.out.println("All options in Dropdown :"+s.getOptions());
+		s.selectByVisibleText("Option2");
 		
-		List<WebElement> list=s.getOptions();
+		String actual=drpdwn.getAttribute("value");
 		
-		for(WebElement linm:list)
-		{
-			String linkTxt=linm.getText();
-			
-			System.out.println("Dropdown optios are :"+linkTxt);
-			
-			if(linkTxt.contains("Option2"))
-			{
-				linm.click();
-				
-				String actual=drpdwn.getAttribute("value");
-				
-				System.out.println("Selected from Dropdown:"+actual);
-				
-				Assert.assertEquals(actual, expected);
-				
-				screenShot("27_5Drodpwn");
-			}
-		}
+		Assert.assertEquals(actual, expected);
 		
-		
-//		s.selectByValue("option2");
-//		
-//		String actual=drpdwn.getAttribute("value");
-//		
-//		Assert.assertEquals(actual, expected);
-//		
-//		screenShot("27_5DROPDOWN");
+		screenShot("DROPDOWN");
 	}
 	
 	@Test
 	public void tc5()
 	{
-		WebElement c2=km.findElement(By.xpath("//input[contains(@id,'checkBoxOption2')]"));
+		WebElement ch2=km.findElement(By.xpath("//input[contains(@id,'checkBoxOption2')]"));
+	
+		ch2.click();
 		
-		c2.click();
-		
-		boolean b=c2.isSelected();
+		boolean b=ch2.isSelected();
 		
 		Assert.assertTrue(b);
 		
-		screenShot("27_5CHECKBOX");
+		screenShot("CHECKBOX");
 	}
 	
 	@Test
 	public void tc6() throws InterruptedException
 	{
-		String expected="https://www.qaclickacademy.com/lander?oref=https%3A%2F%2Frahulshettyacademy.com%2F";
+		String expectd="https://www.qaclickacademy.com/lander?oref=https%3A%2F%2Frahulshettyacademy.com%2F";
 		
 		km.findElement(By.xpath("//a[contains(@id,'opentab')]")).click();
 		
-		Set<String>s=km.getWindowHandles();
+		Set<String> s=km.getWindowHandles();
 		
-		Iterator<String>ss =s.iterator();
+		Iterator<String>ss=s.iterator();
 		
-		String parent =ss.next();
+		String parent=ss.next();
 		
-		String child= ss.next();
+		String child=ss.next();
 		
 		km.switchTo().window(child);
 		
@@ -214,9 +194,9 @@ public class Day27_5 {
 		
 		String actual=km.getCurrentUrl();
 		
-		Assert.assertEquals(actual, expected);
+		Assert.assertEquals(actual, expectd);
 		
-		screenShot("27_5NEWTAB");
+		screenShot("NEWTAB");
 		
 		km.switchTo().window(parent);
 	}
@@ -224,9 +204,9 @@ public class Day27_5 {
 	@Test
 	public void tc7() throws InterruptedException
 	{
-		WebElement alTxt=km.findElement(By.xpath("//input[contains(@id,'name')]"));
+		WebElement altTxt=km.findElement(By.xpath("//input[contains(@id,'name')]"));
 		
-		alTxt.sendKeys("Kajal");
+		altTxt.sendKeys("KAJAL MANE");
 		
 		km.findElement(By.xpath("//input[contains(@id,'alertbtn')]")).click();
 		
@@ -234,22 +214,27 @@ public class Day27_5 {
 		
 		km.switchTo().alert().accept();
 		
-		alTxt.sendKeys("Yogesh");
+		Thread.sleep(2000);
+		
+		altTxt.sendKeys("KAJAL JAGTAP");
 		
 		km.findElement(By.xpath("//input[contains(@id,'confirmbtn')]")).click();
-		
+
 		Thread.sleep(2000);
 		
 		km.switchTo().alert().dismiss();
 		
+		Thread.sleep(2000);
 	}
 	
 	@Test
-	public void tc8()
+	public void tc8() throws InterruptedException
 	{
 		WebElement dispTxt=km.findElement(By.xpath("//input[contains(@id,'displayed-text')]"));
 		
-		dispTxt.sendKeys("YOGESH MANE");
+		dispTxt.sendKeys("YOGESH");
+		
+		Thread.sleep(2000);
 		
 		km.findElement(By.xpath("//input[contains(@id,'hide-textbox')]")).click();
 		
@@ -257,7 +242,7 @@ public class Day27_5 {
 		
 		Assert.assertFalse(b);
 		
-		screenShot("27_5HIDE");
+		screenShot("HIDE");
 		
 		km.findElement(By.xpath("//input[contains(@id,'show-textbox')]")).click();
 		
@@ -265,7 +250,7 @@ public class Day27_5 {
 		
 		Assert.assertTrue(b2);
 		
-		screenShot("27_5SHOW");
+		screenShot("SHOW");
 	}
 	
 	@Test
@@ -273,7 +258,7 @@ public class Day27_5 {
 	{
 		JavascriptExecutor js=(JavascriptExecutor)km;
 		
-		js.executeScript("window.scrollBy(0,1200)");
+		js.executeScript("window.scrollBy(0,1300)");
 		
 		Thread.sleep(2000);
 		
@@ -285,7 +270,7 @@ public class Day27_5 {
 		
 		a.moveToElement(mouseHover).moveToElement(top).click(top).build().perform();
 		
-		screenShot("27_5ACTIONS");
+		screenShot("ACTIONS");
 	}
 	
 	@Test
@@ -293,7 +278,7 @@ public class Day27_5 {
 	{
         JavascriptExecutor js=(JavascriptExecutor)km;
 		
-		js.executeScript("window.scrollBy(0,1400)");
+		js.executeScript("window.scrollBy(0,1450)");
 		
 		Thread.sleep(2000);
 		
@@ -301,15 +286,12 @@ public class Day27_5 {
 		
 		km.switchTo().frame(iframe);
 		
-	    JavascriptExecutor js2=(JavascriptExecutor)km;
-			
-		js2.executeScript("window.scrollBy(0,2200)");
-			
-		Thread.sleep(2000);
+        JavascriptExecutor js2=(JavascriptExecutor)km;
 		
-		screenShot("27_5IFRAME");
+		js2.executeScript("window.scrollBy(0,3000)");
+		
+		Thread.sleep(2000);
 	}
-	
 	
 	@AfterClass
 	public void tearDown()
